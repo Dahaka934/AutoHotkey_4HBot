@@ -8,18 +8,18 @@ global RFound1      := new Rect(0, 0, 10, 10)
 global RFound2      := new Rect(0, 0, 10, 10)
 
 class Result {
-    static NONE		    := 0
-	static ATK_U		:= 1
-	static ATK_L	    := 2
-	static ATK_R	    := 3
-    static PARRY		:= 4
-    static ATK_U_U		:= 5
-	static ATK_L_U	    := 6
-	static ATK_R_U	    := 7
-    static PARRY_U		:= 8
-	static GB			:= 9
-	static BASH		    := 10
-	static ATK_OTHER	:= 11
+    static NONE         := 0
+    static ATK_U        := 1
+    static ATK_L        := 2
+    static ATK_R        := 3
+    static PARRY        := 4
+    static ATK_U_U      := 5
+    static ATK_L_U      := 6
+    static ATK_R_U      := 7
+    static PARRY_U      := 8
+    static GB           := 9
+    static BASH         := 10
+    static ATK_OTHER    := 11
 }
 
 class AutoBot {

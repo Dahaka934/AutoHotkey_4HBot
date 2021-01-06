@@ -94,7 +94,7 @@ AddKeybindSettingOption(optName) {
 }
 
 OptChanged(opt) {
-	bot.MarkDirty()
+    bot.MarkDirty()
 }
 
 OptSwitch(opt) {

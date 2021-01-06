@@ -169,18 +169,18 @@ class IniStorage {
 }
 
 class WrappedControl {
-	__New(id, ctype, text="") {
+    __New(id, ctype, text="") {
         this.id := id
         this.ctype := ctype
         this.text := text
-		this.callback := 0
-	}
+        this.callback := 0
+    }
 
     Init(options="", window=1) {
         Gui, % window ": Add", % this.ctype, % "hwndhwnd " options, % this.text
         this.hwnd := hwnd
         fn := this.ValueChanged.Bind(this)
-		GuiControl, +g, % this.hwnd, % fn
+        GuiControl, +g, % this.hwnd, % fn
     }
 
     WithCallback(callback) {
@@ -188,15 +188,15 @@ class WrappedControl {
         return this
     }
 
-	Get(prop="") {
-		GuiControlGet, val, % prop, % this.hwnd
-		return val
-	}
+    Get(prop="") {
+        GuiControlGet, val, % prop, % this.hwnd
+        return val
+    }
 
-	Set(value, prop="") {
-		GuiControl, % prop, % this.hwnd, % value
+    Set(value, prop="") {
+        GuiControl, % prop, % this.hwnd, % value
         this.ValueChanged()
-	}
+    }
 
     Switch() {
         if (this.ctype = "CheckBox") {
@@ -204,11 +204,11 @@ class WrappedControl {
         }
     }
 
-	ValueChanged() {
-		if (this.callback != 0) {
-			this.callback.call(this)
-		}
-	}
+    ValueChanged() {
+        if (this.callback != 0) {
+            this.callback.call(this)
+        }
+    }
 
     Save(file) {
         file.Write(this.id, this.Get())
@@ -228,10 +228,10 @@ class WrappedControl {
 
 class WrappedHotkey extends WrappedControl {
     __New(id, keyPressed=0) {
-		base.__New(id, "Hotkey")
+        base.__New(id, "Hotkey")
         this.saved :=
         this.keyPressed := keyPressed
-	}
+    }
 
     ValueChanged() {
         value := this.Get()
@@ -252,7 +252,7 @@ class WrappedHotkey extends WrappedControl {
             }
         }
         base.ValueChanged()
-	}
+    }
 }
 
 class Options {
