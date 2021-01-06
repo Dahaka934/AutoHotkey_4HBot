@@ -5,7 +5,7 @@
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetName>AutoHotkey</TargetName>
+    <TargetName>4HBot</TargetName>
     <ConfigurationType>Application</ConfigurationType>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
@@ -82,6 +82,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
   <!-- import common config -->
   <Import Project="Config.vcxproj" />
   <!-- platform: win32 & x64 (common) -->
@@ -140,7 +143,7 @@
   </ItemDefinitionGroup>
   <!-- self-contained: required settings -->
   <PropertyGroup Condition="$(ConfigSC)">
-    <TargetName>AutoHotkeySC</TargetName>
+    <TargetName>4HBotSC</TargetName>
     <TargetExt>.bin</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="$(ConfigSC)">
@@ -218,6 +221,8 @@
       <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Size</FavorSizeOrSpeed>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="source\fh_bitmap.cpp" />
+    <ClCompile Include="source\fh_bot.cpp" />
     <ClCompile Include="source\globaldata.cpp" />
     <ClCompile Include="source\hook.cpp" />
     <ClCompile Include="source\hotkey.cpp" />
@@ -254,6 +259,10 @@
     <ClInclude Include="source\debug.h" />
     <ClInclude Include="source\Debugger.h" />
     <ClInclude Include="source\defines.h" />
+    <ClInclude Include="source\fh_bitmap.h" />
+    <ClInclude Include="source\fh_bitmapqueue.h" />
+    <ClInclude Include="source\fh_bot.h" />
+    <ClInclude Include="source\fh_utils.h" />
     <ClInclude Include="source\globaldata.h" />
     <ClInclude Include="source\hook.h" />
     <ClInclude Include="source\hotkey.h" />
@@ -311,6 +320,10 @@
       <Outputs>$(SolutionDir)temp\AutoHotkey.exe.manifest</Outputs>
       <SubType>Designer</SubType>
     </CustomBuild>
+    <None Include="4HScripts\Bot.ahk" />
+    <None Include="4HScripts\Character.ahk" />
+    <None Include="4HScripts\4HBot.ahk" />
+    <None Include="4HScripts\Lib.ahk" />
     <None Include="source\resources\icon_filetype.ico" />
     <None Include="source\resources\icon_main.ico" />
     <None Include="source\resources\icon_pause.ico" />

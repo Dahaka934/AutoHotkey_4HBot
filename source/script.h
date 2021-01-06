@@ -1115,6 +1115,7 @@ public:
 			case ACT_FORMATTIME:
 			case ACT_FOR:
 			case ACT_CATCH:
+			case ACT_FH_ATTACKSEARCH:
 				return ARG_TYPE_OUTPUT_VAR;
 
 			case ACT_SORT:
@@ -1163,6 +1164,7 @@ public:
 			case ACT_SPLITPATH:
 			case ACT_FILEGETSHORTCUT:
 			case ACT_FOR:
+			case ACT_FH_PROP_STR:
 				return ARG_TYPE_OUTPUT_VAR;
 			}
 			break;

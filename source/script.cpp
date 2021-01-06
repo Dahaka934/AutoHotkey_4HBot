@@ -22,6 +22,7 @@ GNU General Public License for more details.
 #include "window.h" // for a lot of things
 #include "application.h" // for MsgSleep()
 #include "TextIO.h"
+#include "fh_bot.h"
 
 // Globals that are for only this module:
 #define MAX_COMMENT_FLAG_LENGTH 15
@@ -14791,6 +14792,60 @@ __forceinline ResultType Line::Perform() // As of 2/9/2009, __forceinline() redu
 		return ImageSearch(ArgToInt(3), ArgToInt(4), ArgToInt(5), ArgToInt(6), ARG7);
 	case ACT_PIXELGETCOLOR:
 		return PixelGetColor(ArgToInt(2), ArgToInt(3), ARG4);
+
+	case ACT_FH_PROP_INT: {
+		auto ref = ForHonor::Bot::instance().propInt(ARG1);
+		if (!ref)
+			return ThrowRuntimeException(_T("Unknown FH Int property"));
+
+		if (ArgToInt(3)) {
+			if (!ARGVAR2)
+				return ThrowRuntimeException(_T("Invalid output variable"));
+			ARGVAR2->Assign(*ref);
+		}
+		else {
+			*ref = ArgToInt(2);
+		}
+
+		return OK;
+	}
+	case ACT_FH_PROP_FLT: {
+		auto ref = ForHonor::Bot::instance().propFlt(ARG1);
+		if (!ref)
+			return ThrowRuntimeException(_T("Unknown FH Flt property"));
+
+		if (ArgToInt(3)) {
+			if (!ARGVAR2)
+				return ThrowRuntimeException(_T("Invalid output variable"));
+			ARGVAR2->Assign(*ref);
+		}
+		else {
+			*ref = ArgToDouble(2);
+		}
+		return OK;
+	}
+	case ACT_FH_PROP_STR: {
+		auto ref = ForHonor::Bot::instance().propStr(ARG1);
+		if (!ref)
+			return ThrowRuntimeException(_T("Unknown FH Str property"));
+
+		if (ArgToInt(3)) {
+			if (!ARGVAR2)
+				return ThrowRuntimeException(_T("Invalid output variable"));
+			ARGVAR2->AssignStringW(*ref);
+		}
+		else {
+			*ref = ARG2;
+		}
+		return OK;
+	}
+	case ACT_FH_ATTACKSEARCH_RECT:
+		ForHonor::Bot::instance().attackSearchRect(ArgToInt(1), ArgToInt(2), ArgToInt(3), ArgToInt(4));
+		return OK;
+
+	case ACT_FH_ATTACKSEARCH:
+		ARGVAR1->Assign(ForHonor::Bot::instance().attackSearch(ArgToInt(2)));
+		return OK;
 
 	case ACT_SEND:
 	case ACT_SENDRAW:

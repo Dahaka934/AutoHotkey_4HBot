@@ -1,0 +1,1 @@
+Ahk2Exe.exe /in ..\4HScripts\4HBot.ahk /bin ..\bin\Win32w\4HBotSC.bin /out 4HBot.exe /icon icon.ico

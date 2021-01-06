@@ -78,6 +78,21 @@ GNU General Public License for more details.
 	//#include "SimpleHeap.h"
 #endif
 
+#include <iostream>
+#include <fstream> 
+#include <vector>
+#include <unordered_map>
+#include <queue>
+#include <array>
+#include <memory>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+#include <future>
+#include <functional>
+#include <stdexcept>
+#include <chrono>
+
 // Lexikos: Defining _WIN32_WINNT 0x0600 seems to break TrayTip in non-English Windows,
 //			and possibly other things.  Instead, define any Vista constants we need here.
 #if (_WIN32_WINNT < 0x0600)

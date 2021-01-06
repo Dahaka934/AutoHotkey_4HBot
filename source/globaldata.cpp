@@ -461,6 +461,13 @@ Action g_act[] =
 	, {_T("ImageSearch"), 0, 7, 7 H, {3, 4, 5, 6, 0}} // OutputX, OutputY, left, top, right, bottom, ImageFile
 	// NOTE FOR THE ABOVE: 0 min args so that the output vars can be optional.
 
+	// For Honor hack here
+	, { _T("FH_PropInt"), 0, 3, 2 H, {2, 0} } // char *key, int value, bool set=false
+	, { _T("FH_PropFlt"), 0, 3, 2 H, {2, 0 } } // char *key, float value, bool set=false
+	, { _T("FH_PropStr"), 0, 3, 2 H, {0} } // char *key, char * value, bool set=false
+	, { _T("FH_AttackSearchRect"), 0, 4, 4 H, {1, 2, 3, 4, 0} } // int aLeft, int aTop, int aRight, int aBottom
+	, { _T("FH_AttackSearch"), 0, 2, 2 H, {2, 0} } // output, int deflect
+
 	// See above for why minimum is 1 vs. 2:
 	, {_T("GroupAdd"), 1, 6, 6, NULL} // Group name, WinTitle, WinText, Label, exclude-title/text
 	, {_T("GroupActivate"), 1, 2, 2, NULL}

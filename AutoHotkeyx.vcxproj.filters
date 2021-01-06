@@ -17,6 +17,12 @@
       <UniqueIdentifier>{ecb1e7be-5c45-4dfc-9f18-09b5a4ea18e1}</UniqueIdentifier>
       <Extensions>asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\fh">
+      <UniqueIdentifier>{92b42568-661e-4925-ae7d-49ced1d5f033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4HScripts">
+      <UniqueIdentifier>{5fbc605d-0a40-48c5-92ea-090d3e5dd23a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\application.cpp">
@@ -105,6 +111,12 @@
     </ClCompile>
     <ClCompile Include="source\input_object.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\fh_bitmap.cpp">
+      <Filter>Source Files\fh</Filter>
+    </ClCompile>
+    <ClCompile Include="source\fh_bot.cpp">
+      <Filter>Source Files\fh</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +213,18 @@
     <ClInclude Include="source\input_object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\fh_bitmap.h">
+      <Filter>Source Files\fh</Filter>
+    </ClInclude>
+    <ClInclude Include="source\fh_bitmapqueue.h">
+      <Filter>Source Files\fh</Filter>
+    </ClInclude>
+    <ClInclude Include="source\fh_bot.h">
+      <Filter>Source Files\fh</Filter>
+    </ClInclude>
+    <ClInclude Include="source\fh_utils.h">
+      <Filter>Source Files\fh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="source\resources\icon_filetype.ico">
@@ -223,6 +247,18 @@
     </None>
     <None Include="source\resources\icon_tray_win9x_suspend.ico">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="4HScripts\Bot.ahk">
+      <Filter>4HScripts</Filter>
+    </None>
+    <None Include="4HScripts\Character.ahk">
+      <Filter>4HScripts</Filter>
+    </None>
+    <None Include="4HScripts\Lib.ahk">
+      <Filter>4HScripts</Filter>
+    </None>
+    <None Include="4HScripts\4HBot.ahk">
+      <Filter>4HScripts</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
