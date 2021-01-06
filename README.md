@@ -1,4 +1,6 @@
-# AutoHotkey_L #
+# AutoHotkey_4HBot #
+
+AutoHotkey_4HBot is a fork of AutoHotkey_L implements extra performance features for Auto Bot for game For Honor.
 
 AutoHotkey is a free, open source macro-creation and automation software utility that allows users to automate repetitive tasks. It is driven by a custom scripting language that is aimed specifically at providing keyboard shortcuts, otherwise known as hotkeys.
 
